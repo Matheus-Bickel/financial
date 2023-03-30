@@ -10,4 +10,6 @@ RUN yarn install
 
 EXPOSE 3000
 
-CMD ["node", "src/router.ts"]
+RUN chmod +x /src
+
+CMD ["yarn", "run", "start"]
