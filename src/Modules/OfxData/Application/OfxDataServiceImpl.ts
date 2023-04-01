@@ -8,6 +8,6 @@ export class OfxDataServiceImpl implements OfxDataService {
     constructor(@inject(OfxDataRepositoryEnum.OFX_DATA_REPOSITORY) private repository: OfxDataParserRepository){}
     
     async parseAndFormat(data: OfxDataTransaction): Promise<Object> {
-        return await this.repository.dataParserAndConvert(data)
+        return await this.repository.dataParserAndConvert()
     }
 }
