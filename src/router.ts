@@ -2,10 +2,16 @@ import 'reflect-metadata';
 
 import { Request, Response, Router } from 'express';
 import { app } from './app';
+import { bootstrapStart } from './Common/Bootstrap/BootstrapStart';
+import { OfxDataParserRepository } from './Modules/OfxData/Infra/OfxDataParserRepository';
 
 const router = Router()
 app.use(router)
 
-router.get('/', (req: Request, res: Response) => {
-    return res.send('teste')
+async () => {
+    await bootstrapStart()
+}
+
+router.get('/ofx', async (req: Request, res: Response) => {
+    return await new OfxDataParserRepository().dataParserAndConvert()
 })

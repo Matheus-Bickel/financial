@@ -10,9 +10,11 @@ export class OfxDataParserRepository implements OfXDataRepository {
     
     async dataParserAndConvert(): Promise<Object> {
         this.path = 'mocks/Ofx/Extrato-Conta-Corrente-310320232143.ofx'
-    
+        console.log(this.path, 'path')
         const file = fs.readFileSync(this.path, 'utf8')
-        
-        return await new OFXParser().parse(file)
+        const parser = await new OFXParser()
+        const parsedData = parser.parse(file)
+        console.log(parsedData, 'parsed')
+        return await parsedData
     }
 }
