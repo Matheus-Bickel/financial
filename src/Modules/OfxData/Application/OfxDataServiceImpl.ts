@@ -1,9 +1,13 @@
+import { inject, injectable } from "tsyringe";
+import { OfxDataRepositoryEnum } from "../Domain/OfxDataRepositoryEnum";
 import { OfxDataService } from "../Domain/OfxDataService";
 import { OfxDataTransaction } from "../Domain/OfxDataTransaction";
-
+import { OfxDataParserRepository } from "../Infra/OfxDataParserRepository";
+@injectable()
 export class OfxDataServiceImpl implements OfxDataService {
-    parseAndFormat(data: OfxDataTransaction): Promise<Object> {
-        throw new Error("Method not implemented.");
+    constructor(@inject(OfxDataRepositoryEnum.OFX_DATA_REPOSITORY) private repository: OfxDataParserRepository){}
+    
+    async parseAndFormat(data: OfxDataTransaction): Promise<Object> {
+        return await this.repository.dataParserAndConvert(data)
     }
-
 }
