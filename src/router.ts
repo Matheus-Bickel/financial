@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import { Request, Response, Router } from 'express';
 import { app } from './app';
 import { bootstrapStart } from './Common/Bootstrap/BootstrapStart';
-import { OfxDataParserRepository } from './Modules/OfxData/Infra/OfxDataParserRepository';
+import { OfxDataParserRepository } from './Domains/OfxData/Infra/OfxDataParserRepository';
 
 const router = Router()
 app.use(router)
