@@ -1,5 +1,5 @@
-import { OfxDataTransaction } from "./OfxDataTransaction";
+import { OfxDataTransactions } from "./OfxDataTransactions";
 
 export interface OfxDataService {
-    parseAndFormat(data: OfxDataTransaction): Promise<Object>
+    parseAndFormat(data: OfxDataTransactions): Promise<Object>
 }
