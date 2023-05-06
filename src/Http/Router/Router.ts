@@ -6,6 +6,7 @@ export class Router {
 
     async init(): Promise<void> {
         this.httpClient.on('get','/ofx', async (params: string, body: unknown) => {
+            console.log('teste 1')
             const data = {
                 params: params,
                 body: body
