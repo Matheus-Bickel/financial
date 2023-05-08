@@ -4,7 +4,7 @@
   "description": "A financial app for my self",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --transpile-only src/Http/Router/Router.ts",
+    "start": "ts-node-dev --transpile-only src/app.ts",
     "build": "tsc --build",
     "test": "npx jest --detectOpenHandles --runInBand",
     "coverage": "npx jest --coverage"

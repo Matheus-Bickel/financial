@@ -11,7 +11,7 @@ export class ExpressAdapter implements HttpClient {
     constructor() {
         this.app = express()
         this.app.use(express.json())
-        this.port = 3000
+        this.port = this.port
         bootstrapStart()
     }
 
@@ -23,6 +23,6 @@ export class ExpressAdapter implements HttpClient {
     }
     
     listen(port: number): void {
-        this.app.listen(this.port)
+        this.app.listen(port)
     }
 }
