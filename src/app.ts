@@ -1,12 +1,9 @@
-import express from "express";
+import { ExpressAdapter } from "./Http/Adapter/ExpressAdapter";
+import { Router } from "./Http/Router/Router";
 
-const app = express()
+const client = new ExpressAdapter()
 const port = 3000
-app.use(express.json())
-
-
-app.listen(port, () => {
-    return console.log(`Express is listening at  http://localhost:${port}, SERVER ON`)
-})
-
-export { app };
+client.listen(port)
+const router = new Router(client)
+router.init()
+console.log('ON')
