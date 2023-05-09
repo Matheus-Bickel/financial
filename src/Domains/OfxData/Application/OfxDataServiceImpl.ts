@@ -1,4 +1,5 @@
 import { inject, injectable } from "tsyringe";
+
 import { OfxDataRepositoryEnum } from "../Domain/OfxDataRepositoryEnum";
 import { OfxDataService } from "../Domain/OfxDataService";
 import { OfxDataTransactions } from "../Domain/OfxDataTransactions";

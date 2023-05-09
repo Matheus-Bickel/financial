@@ -2,7 +2,8 @@ import { ExpressAdapter } from "./Http/Adapter/ExpressAdapter";
 import { Router } from "./Http/Router/Router";
 
 const client = new ExpressAdapter()
-client.listen(3000)
+const port = 3000
+client.listen(port)
 const router = new Router(client)
 router.init()
 console.log('ON')

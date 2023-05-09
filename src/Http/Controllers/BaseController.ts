@@ -1,3 +1,5 @@
+import { DomainsEnum } from "../../Domains/DomainsEnum";
+
 export interface BaseController {
-    index <T>(data: T, params?: T): Promise<T>
+    index <T>(data: T, group: DomainsEnum, params?: T): Promise<T>
 }
