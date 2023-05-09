@@ -11,7 +11,8 @@ export class ExpressAdapter implements HttpClient {
     constructor() {
         this.app = express()
         this.app.use(express.json())
-        this.port = 3000
+        this.port = this.port
+        bootstrapStart()
     }
 
     on(method: string, url: string, callback: Function): void {
@@ -22,16 +23,6 @@ export class ExpressAdapter implements HttpClient {
     }
     
     listen(port: number): void {
-        this.app.listen(this.port)
-    }
-
-    private getListerPort() {
-        this.app.listen(this.port, () => {
-            return console.log(`Express is listening at  http://localhost:${this.port}, SERVER ON`)
-        })
-    }
-
-    private async function () {
-        await bootstrapStart()
+        this.app.listen(port)
     }
 }
