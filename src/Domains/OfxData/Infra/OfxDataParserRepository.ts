@@ -1,9 +1,9 @@
 import { injectable } from 'tsyringe';
 
-import fs from 'fs';
 import { OfXDataRepository } from "../Domain/OfxDataRepository";
 import { OfxDataTransactions } from '../Domain/OfxDataTransactions';
 
+import fs from 'fs';
 const ofx = require('ofx');
 @injectable()
 export class OfxDataParserRepository implements OfXDataRepository {

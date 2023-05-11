@@ -11,7 +11,7 @@ export class EntryController implements BaseController {
 
         switch(group) {
             case DomainsEnum.OFX:
-                return new OfxDataServiceImpl(repository)
+                return new OfxDataServiceImpl(data, params, repository)
         }
     }
 }
