@@ -1,5 +1,5 @@
-import { RepositoriesEnum } from "./RepositoriesEnum";
+import { DomainsEnum } from "../../../Domains/DomainsEnum";
 
 export interface RepositoriesFactoryInterface {
-    handler(repository: RepositoriesEnum): RepositoriesEnum
+    handler(repository: DomainsEnum): any
 }

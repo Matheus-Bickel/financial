@@ -7,7 +7,7 @@ export class Router {
     
     constructor(protected httpClient: HttpClient) {}
 
-    async init(): Promise<void> {
+    async init(): Promise<any> {
         this.httpClient.on('get','/ofx', async (params: string, body: unknown) => {
             this.group = DomainsEnum.OFX
             
@@ -15,7 +15,7 @@ export class Router {
                 params: params,
                 body: body
             }
-        
+            
             return await new EntryController().index(data.params, this.group, data.body)
         })
     }
