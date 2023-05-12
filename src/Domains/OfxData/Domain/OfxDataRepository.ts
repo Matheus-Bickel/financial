@@ -1,5 +1,5 @@
-import { OfxDataTransactions } from "./OfxDataTransactions";
+import { OfxData } from "./OfxDataTransactions";
 
 export interface OfXDataRepository {
-    dataParserAndConvert(data: OfxDataTransactions): Promise<Object>
+    dataParserAndConvert(data: OfxData[]): Promise<Object>
 }  

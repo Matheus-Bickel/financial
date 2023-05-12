@@ -1,15 +1,15 @@
 import { injectable } from 'tsyringe';
 
 import { OfXDataRepository } from "../Domain/OfxDataRepository";
-import { OfxDataTransactions } from '../Domain/OfxDataTransactions';
 
 import fs from 'fs';
+import { OfxData } from '../Domain/OfxDataTransactions';
 const ofx = require('ofx');
 @injectable()
 export class OfxDataParserRepository implements OfXDataRepository {
     private path: string
     
-    async dataParserAndConvert(data: OfxDataTransactions): Promise<any> {
+    async dataParserAndConvert(data: OfxData[]): Promise<any> {
         const parsedData = fs.readFile('mocks/Ofx/Extrato-Conta-Corrente-310320232143.ofx', 'utf8', function(err, ofxData) {
             if (err) throw err;
 
@@ -24,6 +24,8 @@ export class OfxDataParserRepository implements OfXDataRepository {
 
             // `serializedHeader` is now a JSON string representation of the OFX header object
             console.log(serialized)
+
+            return 'teste'
         });
     }
 }
